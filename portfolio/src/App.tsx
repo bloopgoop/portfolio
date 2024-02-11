@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Intro from './components/intro'
 import Sidenav from './components/sidenav'
+import Project from './components/projects'
 import './App.css'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 
       <Sidenav />
       <Intro />
+      <Project />
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
