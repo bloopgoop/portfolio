@@ -18,11 +18,11 @@ export default function TypewriterEffectDemo() {
     },
   ];
   return (
-    <div className="flex flex-col items-center justify-center h-[40rem] ">
+    <div className="flex flex-col items-center justify-center h-[45rem] " id="intro">
       <TypewriterEffect words={words} />
       <div>
 
-        Software Engineer
+        Software Developer
       </div>
     </div>
   );
