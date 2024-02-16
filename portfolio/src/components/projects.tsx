@@ -5,16 +5,23 @@ import staticHuff from "../assets/staticHuff.png";
 import animatedHuff from "../assets/animatedHuff.gif";
 import staticTraffic from "../assets/staticTraffic.png";
 import animatedTraffic from "../assets/animatedTraffic.gif";
-import imageNotFound from "../assets/image-not-found.jpg";
+import staticCommerce from "../assets/staticCommerce.png";
+import animatedCommerce from "../assets/animatedCommerce.gif";
+import staticNetwork from "../assets/staticNetwork.png";
+import animatedNetwork from "../assets/animatedNetwork.gif";
+import staticMushroomBot from "../assets/staticMushroomBot.png";
+import animatedMushroomBot from "../assets/animatedMushroomBot.gif";
+import staticUchewb from "../assets/staticUchewb.png";
+import animatedUchewb from "../assets/animatedUchewb.gif";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import {
-  IconArrowWaveRightUp,
-  IconBoxAlignRightFilled,
-  IconBoxAlignTopLeft,
+  IconRobot,
+  IconMoneybag,
+  IconNetwork,
   IconBuildingEstate,
   IconBinaryTree,
   IconTrafficCone,
-  IconTableColumn,
+  IconMushroom,
 } from "@tabler/icons-react";
 
 export default function Portfolio() {
@@ -32,7 +39,7 @@ export default function Portfolio() {
             gif={item.gif}
             image={item.image}
             icon={item.icon}
-            className={i === 0 || i === 6 ? "md:col-span-2" : ""}
+            className={i === 0 || i === 3 ? "md:col-span-2" : ""}
           />
         ))}
       </BentoGrid>
@@ -56,14 +63,8 @@ const Skeleton = ({
   </div>
 );
 
-const AnimatedSkeleton = ({
-  image,
-}: {
-  image: string;
-  className?: string;
-}) => (
-  Skeleton({ image, className:"object-contain" })
-);
+const AnimatedSkeleton = ({ image }: { image: string; className?: string }) =>
+  Skeleton({ image, className: "object-contain" });
 
 const items = [
   {
@@ -71,50 +72,57 @@ const items = [
     description:
       "Full stack web application designed to streamline tenant and owner rental interactions. It is built keeping in mind certain requirements and restrictions given by a Systems Analysis and Design class.",
     gif: (
-      <AnimatedSkeleton
-        image="https://github.com/bloopgoop/property-management/assets/104113781/5b0fe21f-a4dd-4696-9a3b-def43e4d13b9"
-      />
+      <AnimatedSkeleton image="https://github.com/bloopgoop/property-management/assets/104113781/5b0fe21f-a4dd-4696-9a3b-def43e4d13b9" />
     ),
     image: <Skeleton image={staticEssentials} />,
     icon: <IconBuildingEstate className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Huffman Algorithm",
-    description: "Implementation of compression technique used to reduce the size of data files. Helps with storage and transferring files.",
-    gif: <AnimatedSkeleton image={animatedHuff}/>,
+    description:
+      "Implementation of compression technique used to reduce the size of data files. Helps with storage and transferring files.",
+    gif: <AnimatedSkeleton image={animatedHuff} />,
     image: <Skeleton image={staticHuff} />,
     icon: <IconBinaryTree className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Traffic",
-    description: "Used convolutional neural networks to distinguish between traffic signs.",
-    gif: <AnimatedSkeleton image={animatedTraffic}/>,
+    description:
+      "Used convolutional neural networks to distinguish between traffic signs.",
+    gif: <AnimatedSkeleton image={animatedTraffic} />,
     image: <Skeleton image={staticTraffic} />,
     icon: <IconTrafficCone className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Power of Communication",
+    title: "Mushroom Bot",
     description:
-      "Understand the impact of effective communication in our lives.",
-    image: <Skeleton image={imageNotFound}/>,
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+      "Implementation of machine learning algorithms to navigate through a game environment.",
+    gif: <AnimatedSkeleton image={animatedMushroomBot} />,
+    image: <Skeleton image={staticMushroomBot} />,
+    icon: <IconMushroom className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Pursuit of Knowledge",
-    description: "Join the quest for understanding and enlightenment.",
-    image: <Skeleton image={imageNotFound}/>,
-    icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
+    title: "Network",
+    description:
+      "Full stack web application to simulate a social network.",
+    gif: <AnimatedSkeleton image={animatedNetwork} />,
+    image: <Skeleton image={staticNetwork} />,
+    icon: <IconNetwork className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Joy of Creation",
-    description: "Experience the thrill of bringing ideas to life.",
-    image: <Skeleton image={imageNotFound}/>,
-    icon: <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500" />,
+    title: "Commerce",
+    description:
+      "Full stack web application to simulate an auctions site.",
+    gif: <AnimatedSkeleton image={animatedCommerce} />,
+    image: <Skeleton image={staticCommerce} />,
+    icon: <IconMoneybag className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Spirit of Adventure",
-    description: "Embark on exciting journeys and thrilling discoveries.",
-    image: <Skeleton image={imageNotFound}/>,
-    icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
+    title: "Uchewb",
+    description:
+      "Discord bot to play youtube audio.",
+    gif: <AnimatedSkeleton image={animatedUchewb} />,
+    image: <Skeleton image={staticUchewb} />,
+    icon: <IconRobot className="h-4 w-4 text-neutral-500" />,
   },
 ];

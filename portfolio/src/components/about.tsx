@@ -9,8 +9,8 @@ export default function About() {
         alt="Kevin Zhu"
         className="w-40 h-40 rounded-full mb-10"
       />
-      <div className="flex flex-row w-[40rem] gap-40">
-        <div className="flex-auto">
+      <div className="flex flex-row sm:w-[40rem] sm:gap-40">
+        <div>
           <h2 className="text-base sm:text-xl md:text-xl lg:text-2xl font-bold mb-5">
             Hi, I'm a developer
           </h2>
