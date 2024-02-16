@@ -40,6 +40,7 @@ export default function Portfolio() {
             image={item.image}
             icon={item.icon}
             className={i === 0 || i === 3 ? "md:col-span-2" : ""}
+            link={item.link}
           />
         ))}
       </BentoGrid>
@@ -76,6 +77,7 @@ const items = [
     ),
     image: <Skeleton image={staticEssentials} />,
     icon: <IconBuildingEstate className="h-4 w-4 text-neutral-500" />,
+    link: "https://github.com/bloopgoop/property-management"
   },
   {
     title: "Huffman Algorithm",
@@ -84,6 +86,7 @@ const items = [
     gif: <AnimatedSkeleton image={animatedHuff} />,
     image: <Skeleton image={staticHuff} />,
     icon: <IconBinaryTree className="h-4 w-4 text-neutral-500" />,
+    link: "https://github.com/bloopgoop/huffman"
   },
   {
     title: "Traffic",
@@ -92,6 +95,7 @@ const items = [
     gif: <AnimatedSkeleton image={animatedTraffic} />,
     image: <Skeleton image={staticTraffic} />,
     icon: <IconTrafficCone className="h-4 w-4 text-neutral-500" />,
+    link: "https://github.com/bloopgoop/CS50AI/tree/main/week5/traffic"
   },
   {
     title: "Mushroom Bot",
@@ -100,6 +104,7 @@ const items = [
     gif: <AnimatedSkeleton image={animatedMushroomBot} />,
     image: <Skeleton image={staticMushroomBot} />,
     icon: <IconMushroom className="h-4 w-4 text-neutral-500" />,
+    link: "https://github.com/bloopgoop/mushroombot"
   },
   {
     title: "Network",
@@ -108,6 +113,7 @@ const items = [
     gif: <AnimatedSkeleton image={animatedNetwork} />,
     image: <Skeleton image={staticNetwork} />,
     icon: <IconNetwork className="h-4 w-4 text-neutral-500" />,
+    link: "https://github.com/bloopgoop/network"
   },
   {
     title: "Commerce",
@@ -116,6 +122,7 @@ const items = [
     gif: <AnimatedSkeleton image={animatedCommerce} />,
     image: <Skeleton image={staticCommerce} />,
     icon: <IconMoneybag className="h-4 w-4 text-neutral-500" />,
+    link: "https://github.com/bloopgoop/auctions"
   },
   {
     title: "Uchewb",
@@ -124,5 +131,6 @@ const items = [
     gif: <AnimatedSkeleton image={animatedUchewb} />,
     image: <Skeleton image={staticUchewb} />,
     icon: <IconRobot className="h-4 w-4 text-neutral-500" />,
+    link: "https://github.com/bloopgoop/ytbot"
   },
 ];

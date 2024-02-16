@@ -27,6 +27,7 @@ export const BentoGridItem = ({
   gif,
   image,
   icon,
+  link,
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -34,11 +35,13 @@ export const BentoGridItem = ({
   gif?: React.ReactNode;
   image?: React.ReactNode;
   icon?: React.ReactNode;
+  link?: string;
 }) => {
   const [visible, setVisible] = useState(false); // initiate it at false
 
   return (
-    <div
+    <a
+      href={link ? link : "#"}
       className={cn(
         "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
         className
@@ -56,6 +59,6 @@ export const BentoGridItem = ({
           {description}
         </div>
       </div>
-    </div>
+    </a>
   );
 };
