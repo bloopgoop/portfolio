@@ -1,23 +1,81 @@
-import { IconBrandGithub, IconBrandLinkedin, IconMail } from "@tabler/icons-react";
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconMail,
+  IconEdit
+} from "@tabler/icons-react";
+import { motion } from "framer-motion";
 
-export default function Contact() {
+function Platform({
+  icon,
+  href,
+  name,
+}: {
+  icon: JSX.Element;
+  href: string;
+  name: string;
+}) {
   return (
-    <div
-      className="flex flex-row items-center justify-center h-[40rem]"
-      id="contact"
+    <a
+      href={href}
+      className="p-5 rounded-full hover:text-green-400 text-lg flex items-center"
     >
-      <a href="https://github.com/bloopgoop" className="p-5 rounded-full hover:bg-green-100 flex items-center">
-        <IconBrandGithub className="w-8 h-8" />
-        Github
-      </a>
-      <a href="https://www.linkedin.com/in/kevin-zhu-8b1741238/" className="p-5 rounded-full hover:bg-green-100 flex items-center">
-        <IconBrandLinkedin className="w-8 h-8" />
-        LinkedIn
-      </a>
-      <a href="mailto: zhu.kevin12@gmail.com" className="p-5 rounded-full hover:bg-green-100 flex items-center">
-        <IconMail className="w-8 h-8" />
-        zhu.kevin12@gmail.com
-      </a>
-    </div>
+      {icon}
+      {name}
+    </a>
+  );
+}
+
+const contacts = [
+  {
+    icon: <IconBrandGithub className="w-8 h-8" />,
+    href: "https://github.com/bloopgoop",
+    name: "Github",
+  },
+  {
+    icon: <IconBrandLinkedin className="w-8 h-8" />,
+    href: "https://www.linkedin.com/in/kevin-zhu-8b1741238/",
+    name: "LinkedIn",
+  },
+  {
+    icon: <IconMail className="w-8 h-8" />,
+    href: "mailto: zhu.kevin12@gmail.com",
+    name: "zhu.kevin12@gmail.com"
+  },
+  {
+    icon: <IconEdit className="w-8 h-8" />,
+    href: "https://bloopgoop.github.io/docs/",
+    name: "Blog"
+  }
+]
+
+export function Contact() {
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
+      animate={{
+        opacity: 1,
+        y: [20, -5, 0],
+      }}
+      transition={{
+        duration: 0.5,
+        ease: [0.4, 0.0, 0.2, 1],
+      }}
+      className="h-full flex flex-row justify-center items-center"
+    >
+      <div
+        className="flex flex-col items-center justify-center"
+        id="contact"
+      >
+        {
+          contacts.map((contact) => (
+            <Platform {...contact} />
+          ))
+        }
+      </div>
+    </motion.div>
   );
 }

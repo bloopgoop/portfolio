@@ -1,21 +1,18 @@
-import Intro from './components/intro'
-import Sidenav from './components/sidenav'
-import About from './components/about'
-import Project from './components/projects'
-import Contact from './components/contact'
-import './App.css'
+import { Navbar } from "./components/navbar";
+import { Outlet } from "react-router-dom";
+import { HeroHighlight } from "./components/ui/hero-highlight";
+import { ThemeProvider } from "./components/theme-provider";
+import "./App.css";
 
 function App() {
-
   return (
-    <>
-      <Sidenav />
-      <Intro />
-      <About />
-      <Project />
-      <Contact />
-    </>
-  )
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <HeroHighlight>
+        <Navbar />
+        <Outlet />
+      </HeroHighlight>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
